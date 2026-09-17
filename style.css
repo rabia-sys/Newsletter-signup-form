@@ -1,0 +1,185 @@
+:root{
+--Dark-Slate-Grey: hsl(234, 29%, 20%);
+
+--Charcoal-Grey: hsl(235, 18%, 26%);
+
+--Grey: hsl(231, 7%, 60%);
+
+--White: hsl(0, 0%, 100%);
+
+--Tomato: hsl(4, 100%, 67%);
+--tomato-light: hsla(4, 100%, 67%, 0.15);
+}
+*{
+   box-sizing: border-box; 
+   margin: 0;
+   padding: 0;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--Charcoal-Grey);
+    min-height: 100vh;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hidden {
+  display: none !important ;
+}
+.card{
+    background-color: var(--White);
+    border-radius:1rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
+    width: 100%;
+    max-width: 24rem;
+}
+.right-side img{
+width: 100%;
+height: auto;
+display: block;
+}
+.left-side {
+  padding: 2rem 1.5rem;
+}
+h1{
+  color: var(--Dark-Slate-Grey);
+  font-size: 3rem;
+  margin-block-end: 1.5rem;
+}
+.left-side ul {
+  list-style: none;
+  margin-block: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.left-side li {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  color: var(--Dark-Slate-Grey);
+}
+.input-header{
+    display: flex;
+    justify-content: space-between;
+}
+label{
+    color: var(--Dark-Slate-Grey);
+    font-weight: 700;
+    font-size: 0.75rem;
+}
+.error-msg{
+    color: var(--Tomato);
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+/* Base state */
+input[type="email"] {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  color: var(--Dark-Slate-Grey);
+  background-color: var(--White);
+  /* Force a solid, clean border */
+  border: 1px solid var(--Grey);
+  border-radius: 0.5rem;
+  /* Removes default browser outlines so our custom border shows cleanly */
+  outline: none;
+  margin-block-start: 0.5rem;
+}
+
+/* Active focus state when clicking inside the input */
+input[type="email"]:focus {
+  border-color: var(--Dark-Slate-Grey);
+}
+
+/* Error state (added via JavaScript on invalid submit) */
+input[type="email"].error {
+  border-color: var(--Tomato);
+  background-color: var(--tomato-light);
+  color: var(--Tomato);
+}
+
+button {
+  width: 100%;
+  padding: 1.1rem;
+  margin-block-start: 1.5rem;
+  background-color: var(--Dark-Slate-Grey);
+  color: var(--White);
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease;
+}
+
+/* Hover & Focus State */
+button:hover,
+button:focus-visible {
+  outline: none;
+  background: linear-gradient(135deg, #ff527b, var(--Tomato));
+  box-shadow: 0 10px 20px rgba(255, 98, 87, 0.4);
+}
+
+/* Active Click State */
+button:active {
+  transform: scale(0.98);
+}
+.success-card {
+  display: flex;
+  flex-direction: column !important;
+  padding: 2rem 1.5rem;
+max-width: 25rem;
+  border-radius: 2rem;
+   background-color: var(--White);
+   width: 90%;
+}
+
+.success-card .success-icon {
+  width: 3rem;
+  margin-block-end: 1.5rem;
+}
+
+.success-card h1 {
+  color: var(--Dark-Slate-Grey);
+  font-size: 2.5rem;
+  line-height: 1;
+  margin-block-end: 1rem;
+}
+.success-card p {
+  color: var(--Charcoal-Grey);
+  line-height: 1;
+  margin-block-end: 1.5rem;
+}
+
+.success-card strong {
+  font-weight: 700;
+}
+
+@media (min-width: 50em) {
+  .card {
+    flex-direction: row; /* Puts right-side image on the right, left-side text on the left! */
+    align-items: center;
+    max-width: 58rem; /* Keeps card from growing too wide */
+    padding: 1.5rem;  /* Inner frame padding for desktop design */
+    border-radius: 2rem;
+  }
+
+  .left-side {
+    flex: 1; /* Takes up equal left space */
+    padding: 2rem 3rem;
+  }
+
+  .right-side {
+    flex: 1; /* Takes up equal right space */
+  }
+
+  .right-side img {
+    border-radius: 1rem; /* Rounds image edges inside desktop card */
+  }
+}

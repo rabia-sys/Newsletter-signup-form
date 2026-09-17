@@ -1,0 +1,7 @@
+const signupCard=document.getElementById("signup-card");
+const email=document.getElementById("email");
+const newsLetterForm= getElementById("newsletter-form");
+const errorMsg= getElementById("error-msg");
+const successCard= getElementById("success-card");
+const userEmail=document. queryselector("user-email");
+const dismissBtn= getElementById("dismiss-btn");
