@@ -9,7 +9,9 @@
 
 --Tomato: hsl(4, 100%, 67%);
 --tomato-light: hsla(4, 100%, 67%, 0.15);
+--gradient-accent: #ff527b;
 }
+
 *{
    box-sizing: border-box; 
    margin: 0;
@@ -19,13 +21,12 @@ body{
     font-family: 'Roboto', sans-serif;
     background-color: var(--Charcoal-Grey);
     min-height: 100vh;
-    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .hidden {
-  display: none !important ;
+  display: none;
 }
 .card{
     background-color: var(--White);
@@ -122,7 +123,7 @@ button {
 button:hover,
 button:focus-visible {
   outline: none;
-  background: linear-gradient(135deg, #ff527b, var(--Tomato));
+  background: linear-gradient(135deg, var(--gradient-accent), var(--Tomato));
   box-shadow: 0 10px 20px rgba(255, 98, 87, 0.4);
 }
 
@@ -160,26 +161,37 @@ max-width: 25rem;
 .success-card strong {
   font-weight: 700;
 }
-
+.hidden {
+  display: none;
+}
 @media (min-width: 50em) {
   .card {
-    flex-direction: row; /* Puts right-side image on the right, left-side text on the left! */
+    flex-direction: row; 
     align-items: center;
-    max-width: 58rem; /* Keeps card from growing too wide */
-    padding: 1.5rem;  /* Inner frame padding for desktop design */
+    max-width: 58rem; 
+    padding: 1.5rem;  
     border-radius: 2rem;
   }
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
 
   .left-side {
-    flex: 1; /* Takes up equal left space */
+    flex: 1; 
     padding: 2rem 3rem;
   }
 
   .right-side {
-    flex: 1; /* Takes up equal right space */
-  }
+    flex: 1; }
 
   .right-side img {
-    border-radius: 1rem; /* Rounds image edges inside desktop card */
+    border-radius: 1rem; 
   }
 }
